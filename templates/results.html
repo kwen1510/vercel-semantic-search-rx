@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-secondary">{% block title %} Question: {{ query }} {% endblock %}</h1>
+    <br>
+
+    {%for response in responses%}
+
+		<h3>{{ response[0] }}</h3>
+		<p class="text-primary">{{ response[1] }}</p>
+		<p class="text-secondary">{{ response[2] }}</p>
+		<br>
+
+    {%endfor%}
+
+	<a href="/"><button class="btn btn-primary">Ask another question</button></a>
+
+{% endblock %}
